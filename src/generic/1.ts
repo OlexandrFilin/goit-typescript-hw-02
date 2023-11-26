@@ -15,16 +15,15 @@
 
 // export {};
 
-function getPromise<T>() {
+function getPromise<T extends [string, number]>(): Promise<T>  {
   return new Promise<T>((resolve) => {
     resolve(['Text', 50] as T);
   });
 }
 
-getPromise<(string | number)[]>()
+getPromise()
   .then((data) => {
     // 'data' will have the type (string | number)[]
     console.log(data);
   });
-
 export {};

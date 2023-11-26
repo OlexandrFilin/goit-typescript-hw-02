@@ -16,7 +16,7 @@ interface PropsComp{
   title:string;
 }
 
-class Component <T extends PropsComp>  {
+class Component <T>  {
   constructor (public props:T  ) {
 
   }
